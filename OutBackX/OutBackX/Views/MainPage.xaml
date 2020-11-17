@@ -6,14 +6,15 @@
              mc:Ignorable="d"
              x:Class="OutBackX.Views.MainPage">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="FillAndExpand">
-            <StackLayout>
+        <StackLayout Padding="20">
+            <StackLayout VerticalOptions="FillAndExpand">
                 <Label Text="Onde você pretente comer hoje"
                     HorizontalOptions="CenterAndExpand" 
                        FontSize="Large"
                        FontAttributes="Bold"/>
-                <Button></Button>
-                <Button></Button>
+                <Label Text=""></Label>
+                <Button Text="Buscar restaurantes"></Button>
+                <Button Text="Mostrar meus restaurantes favoritos"></Button>
             </StackLayout>
             <StackLayout VerticalOptions="End">
                 <Button Text="Login como administrador"></Button>
