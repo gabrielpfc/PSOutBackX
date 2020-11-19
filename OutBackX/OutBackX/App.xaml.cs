@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OutBackX.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,13 +11,35 @@ namespace OutBackX
         {
             InitializeComponent();
 
-            MainPage = new Views.MainPage();
+            MainPage = new NavigationPage(new Views.MainPage());
         }
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+            // Abrindo tela de funcionarios
+            MessagingCenter.Subscribe<ViewModel.MainPageViewModel>(this,
+                    "FuncionarioMainPageAbrir",
+                    (sender) =>
+                    {
+                        MainPage = new FuncionarioMainPage();
+                    });
+
+
+            // Abrindo tela de Restaurantes
+            MessagingCenter.Subscribe<ViewModel.MainPageViewModel>(this, "RestaurantesPageAbrir",
+                (sender) =>
+                {
+                    MainPage = new RestaurantesPage();
+                });
+
+            // Abrindo tela de favoritos
+            MessagingCenter.Subscribe<ViewModel.MainPageViewModel>(this, "FavoritosPageAbrir",
+                (sender) =>
+                {
+                    MainPage = new FavoritosPage();
+                });
         }
+    
 
         protected override void OnSleep()
         {

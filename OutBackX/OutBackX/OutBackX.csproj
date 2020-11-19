@@ -17,12 +17,20 @@
   <ItemGroup>
     <Folder Include="Layers\Business\" />
     <Folder Include="Layers\Data\Config\" />
-    <Folder Include="Model\" />
-    <Folder Include="ViewModel\" />
+    <Folder Include="Views\Components\" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Views\FavoritosPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\FuncionarioMainPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\MainPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\RestaurantesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

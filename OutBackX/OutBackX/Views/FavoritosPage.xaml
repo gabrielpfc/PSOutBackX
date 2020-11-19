@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="OutBackX.Views.FavoritosPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20" BackgroundColor="#f2d5a1">
+            <StackLayout VerticalOptions="FillAndExpand">
+
+                <Label Text="Restaurantes mais próximos" 
+                   FontSize="Medium" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="CenterAndExpand">
+                </Label>
+                <Label></Label>
+                <ListView ItemsSource="{Binding ListaRestaurantes}" 
+                          SelectedItem="{Binding RestauranteSelecionado}" 
+                          HasUnevenRows="false">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" HeightRequest="700" WidthRequest="900" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                    <Label FontSize="Medium" Text="{Binding title}" FontAttributes="Bold" WidthRequest="700"></Label>
+                                    <StackLayout HeightRequest="700" WidthRequest="500" HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                                        <Label FontSize="Small" Text="{Binding lotação}" WidthRequest="250" HeightRequest="250" FontAttributes=" Italic"></Label>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+            <StackLayout VerticalOptions="End">
+                <Button Text="Voltar" Command="{Binding VoltarClicked}" BackgroundColor="#fe983e"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
