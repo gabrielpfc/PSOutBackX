@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="OutBackX.Views.CadastroPage"
+             xmlns:vm="clr-namespace:OutBackX.ViewModel"
+             NavigationPage.HasNavigationBar="false">
+
+    <ContentPage.BindingContext>
+        <vm:CadastroViewModel></vm:CadastroViewModel>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#f2d5a1">
+            <StackLayout Padding="50" VerticalOptions="FillAndExpand">
+                <Label Text="Nome" TextColor="#576ff4"></Label>
+                <Entry Placeholder="Digite o nome do restaurante" Text="{Binding Restaurante.nome}" ></Entry>
+                <StackLayout Padding="50" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <Label Text="Digite a Lotação atual do restaurante"></Label>
+                    <Picker Title="Lotação" 
+                                    SelectedItem="{Binding Restaurante.lotacao}"
+                                    WidthRequest="100">
+                        <Picker.Items>
+                            <x:String>Vazio</x:String>
+                            <x:String>Regular</x:String>
+                            <x:String>Lotado</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Label Text="Digite a Km da rodovia"></Label>
+                    <Entry Placeholder="Km da rodovia" Text="{Binding Restaurante.km}"  Keyboard="Numeric" ></Entry>
+                </StackLayout>
+                <Button Text="Cadastrar" Command="{Binding CadastrarClicked}" BackgroundColor="#e26c32"></Button>
+            </StackLayout>
+            <StackLayout VerticalOptions="End" Padding="20">
+                <Button Text="Voltar" Command="{Binding VoltarClicked}" BackgroundColor="#fe983e"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

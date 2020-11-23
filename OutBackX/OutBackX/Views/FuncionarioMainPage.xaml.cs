@@ -16,5 +16,12 @@ namespace OutBackX.Views
         {
             InitializeComponent();
         }
+
+        public void SairClicked(object o, EventArgs e)
+        {
+
+            MessagingCenter.Send<String>("", "Logoff");
+
+        }
     }
 }

@@ -10,16 +10,16 @@ using Xamarin.Forms.Xaml;
 namespace OutBackX.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class FavoritosPage : ContentPage
+    public partial class CadastroPage : ContentPage
     {
-        public FavoritosPage()
+        public CadastroPage()
         {
             InitializeComponent();
         }
 
         protected override void OnAppearing()
         {
-            MessagingCenter.Subscribe<ViewModel.FavoritosViewModel>(this, "MainPageAbrir",
+            MessagingCenter.Subscribe<ViewModel.CadastroViewModel>(this, "MainPageAbrir",
             (sender) =>
             {
                 if (Model.Global.Funcionario != null)
@@ -37,7 +37,7 @@ namespace OutBackX.Views
         {
             base.OnDisappearing();
 
-            MessagingCenter.Unsubscribe<ViewModel.FavoritosViewModel>(this, "MainPageAbrir");
+            MessagingCenter.Unsubscribe<ViewModel.CadastroViewModel>(this, "MainPageAbrir");
 
         }
     }

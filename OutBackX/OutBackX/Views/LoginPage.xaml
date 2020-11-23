@@ -3,28 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:vm="clr-namespace:OutBackX.ViewModel"
              mc:Ignorable="d"
-             x:Class="OutBackX.Views.MainPage"
+             x:Class="OutBackX.Views.LoginPage"
+             xmlns:vm="clr-namespace:OutBackX.ViewModel"
              NavigationPage.HasNavigationBar="false">
-    
+
     <ContentPage.BindingContext>
-        <vm:MainPageViewModel></vm:MainPageViewModel>
+        <vm:LoginViewModel></vm:LoginViewModel>
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
         <StackLayout Padding="20" BackgroundColor="#f2d5a1">
             <StackLayout VerticalOptions="FillAndExpand">
-                <Label Text="Onde você pretente comer hoje?"
-                    HorizontalOptions="CenterAndExpand" 
-                       FontSize="Large"
-                       FontAttributes="Bold"/>
-                <Label Text=""></Label>
-                <Button Text="Buscar restaurantes" Command="{Binding BuscarClicked}" BackgroundColor="#e26c32"></Button>
-                <Button Text="Meus Favoritos" Command="{Binding FavoritosClicked}" BackgroundColor="#e26c32"></Button>
+                <Image Source="logo.png" WidthRequest="110" HeightRequest="110"></Image>
+                <Entry Placeholder="Usuário" 
+                   x:Name="EntryUsuario" 
+                   Text="{Binding Funcionario.Login}"/>
+                <Entry Placeholder="Senha" 
+                   x:Name="EntrySenha" 
+                   Text="{Binding Funcionario.Senha}" IsPassword="True"/>
+                <Button Text="Entrar" Command="{Binding EntrarClicked}" BackgroundColor="#e26c32"></Button>
             </StackLayout>
             <StackLayout VerticalOptions="End">
-                <Button Text="Entrar como funcionário" Command="{Binding AdminClicked}" BackgroundColor="#fe983e"></Button>
+                <Button Text="Voltar" Command="{Binding VoltarClicked}" BackgroundColor="#fe983e"></Button>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

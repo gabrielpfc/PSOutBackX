@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:vm="clr-namespace:OutBackX.ViewModel"
+             x:Class="OutBackX.Views.RestauranteDetalheADM"
+             NavigationPage.HasNavigationBar="false">
+
+    <ContentPage.BindingContext>
+        <vm:RestauranteDetalheADMViewModel></vm:RestauranteDetalheADMViewModel>
+    </ContentPage.BindingContext>
+
+
+    <ContentPage.Content>
+        <StackLayout Padding="20" BackgroundColor="#f2d5a1">
+            <StackLayout VerticalOptions="FillAndExpand">
+                <Label Text=""></Label>
+                <StackLayout Orientation="Horizontal">
+                    <Label FontAttributes="Bold" FontSize="Medium" Text="Restaurante:"></Label>
+                    <Label FontAttributes="Bold" FontSize="Medium" Text="{Binding Restaurante.nome}" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label FontAttributes="Bold" FontSize="Medium" Text="Lotação informada:"></Label>
+                    <Label FontAttributes="Bold" FontSize="Medium" Text="{Binding Restaurante.lotacao}" />
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Label Text=""></Label>
+                    <Label Text="Por favor informe a lotação atualizada"></Label>
+                    <Picker Title="Lotação" 
+                                        SelectedItem="{Binding Restaurante.lotacao}"
+                                        WidthRequest="100">
+                        <Picker.Items>
+                            <x:String>Vazio</x:String>
+                            <x:String>Regular</x:String>
+                            <x:String>Lotado</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Button Text="Informar" Command="{Binding InformarClicked}" BackgroundColor="#e26c32"></Button>
+                    <Button Text="Deletar restaurante" Command="{Binding DeletarClicked}" BackgroundColor="#e26c32"></Button>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout VerticalOptions="End">
+                <Button Text="Adicionar Favorito" Command="{Binding FavoritarClicked}" BackgroundColor="#e26c32"></Button>
+                <Button Text="Voltar" Command="{Binding VoltarClicked}" BackgroundColor="#fe983e"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -3,19 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:OutBackX.ViewModel"
              mc:Ignorable="d"
-             x:Class="OutBackX.Views.FuncionarioMainPage">
+             x:Class="OutBackX.Views.FuncionarioMainPage"
+             NavigationPage.HasNavigationBar="false">
+
+    <ContentPage.BindingContext>
+        <vm:MainPageViewModel></vm:MainPageViewModel>
+    </ContentPage.BindingContext>
+
+
     <ContentPage.Content>
-        <StackLayout Padding="20">
+        <StackLayout Padding="20" BackgroundColor="#f2d5a1">
             <StackLayout VerticalOptions="FillAndExpand">
-                <Label Text="Onde você pretente comer hoje"
+                <Label Text="Onde você pretente comer hoje?"
                     HorizontalOptions="CenterAndExpand" 
                        FontSize="Large"
                        FontAttributes="Bold"/>
                 <Label Text=""></Label>
-                <Button Text="Buscar restaurantes"></Button>
-                <Button Text="Mostrar meus restaurantes favoritos"></Button>
-                <Button Text="Gerir restaurantes"></Button>
+                <Button Text="Buscar restaurantes" Command="{Binding BuscarClicked}" BackgroundColor="#e26c32"></Button>
+                <Button Text="Meus Favoritos" Command="{Binding FavoritosClicked}" BackgroundColor="#e26c32"></Button>
+                <Button Text="Gerir restaurantes" Command="{Binding GerirClicked}" BackgroundColor="#fe983e"></Button>
+                <Button Text="Cadastrar novo restaurante" Command="{Binding CadastrarClicked}" BackgroundColor="#fe983e"></Button>
+            </StackLayout>
+            <StackLayout VerticalOptions="End">
+                <Button Text="Terminar sessão administrativa" Clicked="SairClicked" BackgroundColor="#fe983e"></Button>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
