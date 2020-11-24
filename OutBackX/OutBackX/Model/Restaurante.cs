@@ -13,6 +13,21 @@ namespace OutBackX.Model
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        private int _id;
+        [PrimaryKey, AutoIncrement]
+        public int id
+        {
+            get { return _id; }
+            set
+            {
+                if (_id != value)
+                {
+                    _id = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
         private int _km;
         public int km
         {
@@ -41,6 +56,20 @@ namespace OutBackX.Model
             }
         }
 
+        private String _endereco;
+        public String endereco
+        {
+            get { return _endereco; }
+            set
+            {
+                if (_endereco != value)
+                {
+                    _endereco = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
         private String _lotacao;
         public String lotacao
         {
@@ -61,11 +90,12 @@ namespace OutBackX.Model
 
         }
 
-        public Restaurante(int _km, String _nome, String _lotacao)
+        public Restaurante(int _km, String _nome, String _lotacao, String _endereco)
         {
             this.km = _km;
             this.nome = _nome;
             this.lotacao = _lotacao;
+            this.endereco = _endereco;
         }
 
     }

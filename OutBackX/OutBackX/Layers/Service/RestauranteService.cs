@@ -9,7 +9,7 @@ namespace OutBackX.Layers.Service
         public IList<Restaurante> Get()
         {
             IList<Restaurante> restaurantes = new List<Restaurante>() { new Restaurante(
-                40, "McDonalds", "Regular")};
+                40, "OutBackX", "Regular", "rodovia Washington Luís")};
 
             return restaurantes;
         }

@@ -23,6 +23,7 @@ namespace OutBackX.ViewModel
             Restaurante.nome = "";
             Restaurante.lotacao = "";
             Restaurante.km = 0;
+            Restaurante.endereco = "rodovia Washington Luís";
 
             CadastrarClicked = new Command(() => {
                 if (Restaurante.lotacao == "")
@@ -32,7 +33,7 @@ namespace OutBackX.ViewModel
                 if (validaCampos()) { 
                     try
                     {
-                        new RestauranteBusiness().NovoRestaurante(new Model.Restaurante(Restaurante.km, Restaurante.nome, Restaurante.lotacao));
+                        new RestauranteBusiness().NovoRestaurante(new Model.Restaurante(Restaurante.km, Restaurante.nome, Restaurante.lotacao, Restaurante.endereco));
                         App.MensagemAlerta("Cadastrado com sucesso");
                     }
                     catch (Exception ex)

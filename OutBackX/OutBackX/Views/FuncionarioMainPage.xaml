@@ -23,7 +23,6 @@
                 <Label Text=""></Label>
                 <Button Text="Buscar restaurantes" Command="{Binding BuscarClicked}" BackgroundColor="#e26c32"></Button>
                 <Button Text="Meus Favoritos" Command="{Binding FavoritosClicked}" BackgroundColor="#e26c32"></Button>
-                <Button Text="Gerir restaurantes" Command="{Binding GerirClicked}" BackgroundColor="#fe983e"></Button>
                 <Button Text="Cadastrar novo restaurante" Command="{Binding CadastrarClicked}" BackgroundColor="#fe983e"></Button>
             </StackLayout>
             <StackLayout VerticalOptions="End">

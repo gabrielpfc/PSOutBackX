@@ -12,8 +12,6 @@ namespace OutBackX.ViewModel
 
         public ICommand VoltarClicked { get; private set; }
 
-        public ICommand CadastrarClicked { get; private set; }
-
         public ICommand RestauranteTappedCommand { get; private set; }
 
         public RestaurantesViewModel()

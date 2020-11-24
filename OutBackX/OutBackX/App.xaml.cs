@@ -79,12 +79,6 @@ namespace OutBackX
                     MainPage = new NavigationPage(new CadastroPage());
                 });
 
-            // Abrindo tela de Administração
-            MessagingCenter.Subscribe<ViewModel.MainPageViewModel>(this, "GerirPageAbrir",
-                (sender) =>
-                {
-                    MainPage = new NavigationPage(new GerirPage());
-                });
 
             //Encerrar Sessão
             MessagingCenter.Subscribe<String>("", "Logoff",

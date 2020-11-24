@@ -19,6 +19,7 @@ namespace OutBackX.Views
 
         protected override void OnAppearing()
         {
+            InitializeComponent();
             MessagingCenter.Subscribe<ViewModel.FavoritosViewModel>(this, "MainPageAbrir",
             (sender) =>
             {

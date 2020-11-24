@@ -19,7 +19,7 @@ namespace OutBackX.ViewModel
         public RestauranteDetalheViewModel()
         {
             Restaurante = Model.Global.Restaurante;
-            Model.Favorito Favorito = new Model.Favorito(Restaurante.km, Restaurante.nome, Restaurante.lotacao);
+            Model.Favorito Favorito = new Model.Favorito(Restaurante.km, Restaurante.nome, Restaurante.lotacao, Restaurante.lotacao);
 
             InformarClicked = new Command(() => {
                 try

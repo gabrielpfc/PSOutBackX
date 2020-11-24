@@ -22,6 +22,7 @@ namespace OutBackX.Layers.Business
                 if(listaFavoritos.Count == 0)
                 {
                     new FavoritosData().Insert(favorito);
+                    return true;
                 }
                 foreach (var favoritoTemp in listaFavoritos)
                 {

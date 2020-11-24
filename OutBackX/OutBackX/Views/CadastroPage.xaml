@@ -28,7 +28,7 @@
                             <x:String>Lotado</x:String>
                         </Picker.Items>
                     </Picker>
-                    <Label Text="Digite a Km da rodovia"></Label>
+                    <Label Text="Km da rodovia"></Label>
                     <Entry Placeholder="Km da rodovia" Text="{Binding Restaurante.km}"  Keyboard="Numeric" ></Entry>
                 </StackLayout>
                 <Button Text="Cadastrar" Command="{Binding CadastrarClicked}" BackgroundColor="#e26c32"></Button>

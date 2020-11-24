@@ -14,9 +14,6 @@ namespace OutBackX.ViewModel
 
         public ICommand AdminClicked { get; private set; }
 
-        //Botoes De Funcionarios
-        public ICommand GerirClicked { get; private set; }
-
         public ICommand CadastrarClicked { get; private set; }
 
         public MainPageViewModel()
@@ -35,14 +32,10 @@ namespace OutBackX.ViewModel
                 MessagingCenter.Send<MainPageViewModel>(this, "LoginPageAbrir");
             }); 
             
-            //Botoes exclusivos de Funcionarios
-            GerirClicked = new Command(() => {
-                MessagingCenter.Send<MainPageViewModel>(this, "GerirPageAbrir");
-            });
-
+            //Botao exclusivo de Funcionarios
             CadastrarClicked = new Command(() => {
                 MessagingCenter.Send<MainPageViewModel>(this, "CadastrarPageAbrir");
-            });                                 //
+            });
 
         }
 
